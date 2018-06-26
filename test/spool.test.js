@@ -7,7 +7,7 @@ describe('spool', () => {
   before(() => {
     pack = global.app.spools['generics']
   })
-  it('should be loaded into the app.packs collection', () => {
+  it('should be loaded into the app.spools collection', () => {
     assert(pack)
   })
   describe('#validate', () => {

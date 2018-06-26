@@ -1,9 +1,16 @@
 # spool-generics
 
+[![Gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
-[![Build status][ci-image]][ci-url]
+[![Build Status][ci-image]][ci-url]
+[![Test Coverage][coverage-image]][coverage-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
-[![Code Climate][codeclimate-image]][codeclimate-url]
+[![Follow @fabrix-app on Twitter][twitter-image]][twitter-url]
+
+## Install
+```sh
+$ npm install @fabrix/spool-generics --save
+```
 
 ## An adapter protocol for common functions
 
@@ -17,6 +24,20 @@ Current Generics: Email Provider, Payment Processors, Tax Provider, Shipping Pro
 
 Can you think of a generic or method we missed? Create a PR!
 
+## Usage
+
+### Configure
+
+```js
+// config/main.js
+module.exports = {
+  // ...
+  spools: [
+    require('@fabrix/spool-generics').GenericsSpool
+  ]
+}
+```
+
 [npm-image]: https://img.shields.io/npm/v/@fabrix/spool-generics.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@fabrix/spool-generics
 [ci-image]: https://img.shields.io/circleci/project/github/fabrix-app/spool-generics/master.svg
@@ -25,4 +46,7 @@ Can you think of a generic or method we missed? Create a PR!
 [daviddm-url]: https://david-dm.org/fabrix-app/spool-generics
 [codeclimate-image]: https://img.shields.io/codeclimate/github/fabrix-app/spool-generics.svg?style=flat-square
 [codeclimate-url]: https://codeclimate.com/github/fabrix-app/spool-generics
-
+[gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
+[gitter-url]: https://gitter.im/fabrix-app/fabrix
+[twitter-image]: https://img.shields.io/twitter/follow/fabrix-app.svg?style=social
+[twitter-url]: https://twitter.com/fabrix-app

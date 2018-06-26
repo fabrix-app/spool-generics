@@ -7,7 +7,7 @@ import * as config from './config/index'
 import * as pkg from '../package.json'
 import * as api  from './api/index'
 
-export class SpoolGenerics extends Spool {
+export class GenericsSpool extends Spool {
 
   constructor(app) {
     super(app, {
