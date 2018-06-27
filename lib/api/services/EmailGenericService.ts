@@ -8,12 +8,10 @@ import { Validator } from '../../validator'
 export class EmailGenericService extends Service {
   /**
    * _init Initializes the Adapter
-   * @param {Object} adapter
-   * @private
    */
-  _init(adapter) {
-    const Adapter = adapter ? adapter.adapter : this.app.config.get('generics.email_provider.adapter')
-    return new Adapter(adapter ? adapter.options : this.app.config.get('generics.email_provider.options'))
+  private _init(generic) {
+    const Adapter = generic ? generic.adapter : this.app.config.get('generics.email_provider.adapter')
+    return new Adapter(generic ? generic.options : this.app.config.get('generics.email_provider.options'))
   }
 
   /**

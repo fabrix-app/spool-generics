@@ -13,7 +13,7 @@ module.exports = _.defaultsDeep({
       resources: ['services', 'generics'],
       spools: [
         require('@fabrix/spool-router').RouterSpool,
-        require('../dist').SpoolGenerics
+        require('../dist').GenericsSpool
       ]
     },
     generics: {

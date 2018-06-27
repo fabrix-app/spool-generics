@@ -1,5 +1,4 @@
-
 import * as joi from 'joi'
-const fileSchema = require('./uploadFile')
+import { uploadFile } from './uploadFile'
 
-export const uploadFiles = joi.array().items(fileSchema)
+export const uploadFiles = joi.array().items(uploadFile)

@@ -27,15 +27,15 @@ export const Generics = {
    * @returns {Promise.<T>}
    */
   loadGenericApis: (app) => {
-    const apisToMerge = []
-    const generics = _.get(app.config, 'generics')
-    _.each(generics, generic => {
-      const api = _.get(generic, 'api')
-      if (api) {
-        apisToMerge.push(api)
-      }
-    })
-    app.api = _.defaultsDeep({}, app.api, apisToMerge)
+    // const apisToMerge = []
+    // const generics = app.config.get('generics')
+    // _.each(generics, generic => {
+    //   const api = _.get(generic, 'api')
+    //   if (api) {
+    //     apisToMerge.push(api)
+    //   }
+    // })
+    // app.api = _.defaultsDeep({}, app.api, apisToMerge)
     return Promise.resolve()
   },
   /**
