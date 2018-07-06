@@ -1,7 +1,4 @@
 import { FabrixApp } from '@fabrix/fabrix'
-import * as _ from 'lodash'
-
-// const fabrixCore = require('@fabrix/fabrix/dist/lib').Core
 
 export const Generics = {
   /**

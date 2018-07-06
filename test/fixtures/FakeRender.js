@@ -1,8 +1,8 @@
 'use strict'
 // const _ = require('lodash')
 module.exports = class FakeRenderService {
-  constructor(options) {
-    this.options = options
+  constructor(config) {
+    this.config = config
   }
   render(data) {
     return Promise.resolve({document: data})

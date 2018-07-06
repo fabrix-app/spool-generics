@@ -11,7 +11,7 @@ export class TaxGenericService extends Service {
    */
   private _init(generic) {
     const Adapter = generic ? generic.adapter : this.app.config.get('generics.tax_provider.adapter')
-    return new Adapter(generic ? generic.options : this.app.config.get('generics.tax_provider.options'))
+    return new Adapter(generic ? generic.config : this.app.config.get('generics.tax_provider.config'))
   }
 
   /**

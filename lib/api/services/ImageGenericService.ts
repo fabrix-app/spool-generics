@@ -11,7 +11,7 @@ export class ImageGenericService extends Service {
    */
   private _init(generic) {
     const Adapter = generic ? generic.adapter : this.app.config.get('generics.image_processor.adapter')
-    return new Adapter(generic ? generic.options : this.app.config.get('generics.image_processor.options'))
+    return new Adapter(generic ? generic.config : this.app.config.get('generics.image_processor.config'))
   }
 }
 

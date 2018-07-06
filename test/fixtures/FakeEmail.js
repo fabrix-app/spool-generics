@@ -1,8 +1,8 @@
 'use strict'
 // const _ = require('lodash')
 module.exports = class FakeEmailProvider {
-  constructor(options) {
-    this.options = options
+  constructor(config) {
+    this.config = config
   }
   send(data) {
     return Promise.resolve([])

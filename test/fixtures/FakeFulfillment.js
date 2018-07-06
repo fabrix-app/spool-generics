@@ -1,8 +1,8 @@
 'use strict'
 // const _ = require('lodash')
 module.exports = class FakeFulfillmentProvider {
-  constructor(options) {
-    this.options = options
+  constructor(config) {
+    this.config = config
   }
   createOrder(data, adapter){
     return Promise.resolve({})

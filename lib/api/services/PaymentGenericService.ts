@@ -11,7 +11,7 @@ export class PaymentGenericService extends Service {
    */
   private _init(generic) {
     const Adapter = generic ? generic.adapter : this.app.config.get('generics.payment_processor.adapter')
-    return new Adapter(generic ? generic.options : this.app.config.get('generics.payment_processor.options'))
+    return new Adapter(generic ? generic.config : this.app.config.get('generics.payment_processor.config'))
   }
 
   /**

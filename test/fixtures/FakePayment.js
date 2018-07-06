@@ -2,8 +2,8 @@
 const shortid = require('shortid')
 const _ = require('lodash')
 module.exports = class FakePaymentProcessor {
-  constructor(options) {
-    this.options = options
+  constructor(config) {
+    this.config = config
   }
   authorize(transaction) {
 

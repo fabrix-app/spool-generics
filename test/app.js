@@ -7,10 +7,9 @@ module.exports = _.defaultsDeep({
   pkg: {
     name: require('../package').name + '-test'
   },
-  api: require('../dist/api/index'),
+  api: {},
   config: {
     main: {
-      resources: ['services', 'generics'],
       spools: [
         require('@fabrix/spool-router').RouterSpool,
         require('../dist').GenericsSpool
@@ -19,35 +18,35 @@ module.exports = _.defaultsDeep({
     generics: {
       payment_processor: {
         adapter: require('./fixtures/FakePayment'),
-        options: {}
+        config: {}
       },
       email_provider: {
         adapter: require('./fixtures/FakeEmail'),
-        options: {}
+        config: {}
       },
       data_store_provider: {
         adapter: require('./fixtures/FakeDataStore'),
-        options: {}
+        config: {}
       },
       tax_provider: {
         adapter: require('./fixtures/FakeTax'),
-        options: {}
+        config: {}
       },
       shipping_provider: {
         adapter: require('./fixtures/FakeShipping'),
-        options: {}
+        config: {}
       },
       fulfillment_provider: {
         adapter: require('./fixtures/FakeFulfillment'),
-        options: {}
+        config: {}
       },
       geolocation_provider: {
         adapter: require('./fixtures/FakeGeolocation'),
-        options: {}
+        config: {}
       },
       render_service: {
         adapter: require('./fixtures/FakeRender'),
-        options: {}
+        config: {}
       }
     }
   }
