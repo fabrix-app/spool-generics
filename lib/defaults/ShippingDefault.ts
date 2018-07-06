@@ -1,4 +1,3 @@
-'use strict'
-module.exports = class ShippingDefault {
+export class ShippingDefault {
 
 }

@@ -22,9 +22,9 @@ export class GenericsSpool extends Spool {
    */
   async validate () {
     const requiredSpools = ['router']
-    const spools = Object.keys(this.app.config.get('main.spools'))
+    const spools = Object.keys(this.app.spools)
 
-    if (requiredSpools.some(v => spools.indexOf(v) >= 0)) {
+    if (!spools.some(v => requiredSpools.indexOf(v) >= 0)) {
       return Promise.reject(new Error(`spool-generics requires spools: ${ requiredSpools.join(', ') }!`))
     }
 
@@ -40,7 +40,7 @@ export class GenericsSpool extends Spool {
   /**
    * Adds generics' APIs to fabrix api, Adds generics' routes to app.routes
    */
-  configure () {
+  async configure () {
     this.app.api.generics = this.app.api.generics || {}
 
     return Promise.all([
@@ -48,5 +48,9 @@ export class GenericsSpool extends Spool {
       Generics.loadGenericApis(this.app),
       Generics.addRoutes(this.app)
     ])
+  }
+
+  async unload() {
+    return Promise.all([])
   }
 }

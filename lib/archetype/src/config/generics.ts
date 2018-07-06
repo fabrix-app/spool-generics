@@ -3,7 +3,7 @@
  *
  * @see {@link http://
  */
-module.exports = {
+export const generics = {
   email_provider: {
     adapter: null,
     options: {}

@@ -1,24 +1,14 @@
+import { FabrixApp } from '@fabrix/fabrix'
 import * as _ from 'lodash'
-// const fabrixCore = require('fabrix/lib').Core
+
+// const fabrixCore = require('@fabrix/fabrix/dist/lib').Core
 
 export const Generics = {
   /**
    * configure - Configure the Generics
    * @param app
    */
-  configure: (app) => {
-
-    // // Define New properties on app
-    // Object.defineProperties(app, {
-    //   generics: {
-    //     enumerable: true,
-    //     writable: false,
-    //     value: {}
-    //   }
-    // })
-    //
-    // // Bind the Methods
-    // Object.assign(app.generics, fabrixCore.bindMethods(app, 'generics'))
+  configure: (app: FabrixApp) => {
     return
   },
   /**
@@ -44,7 +34,7 @@ export const Generics = {
    * @returns {Promise.<{}>}
    */
   addRoutes: (app) => {
-    // const prefix = _.get(app.config, 'generics.prefix') || _.get(app.config, 'footprints.prefix')
+    // const prefix = _.get(app.config, 'generics.prefix') || _.get(app.config, 'tapestries.prefix')
     // const routerUtil = app.packs.router.util
     // let routesToMerge = []
     // const generics = _.get(app.config, 'generics')

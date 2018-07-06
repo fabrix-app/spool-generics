@@ -1,4 +1,3 @@
-'use strict'
-module.exports = class FulfillmentDefault {
+export class FulfillmentDefault {
 
 }
