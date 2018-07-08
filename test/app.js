@@ -2,6 +2,7 @@
 
 const _ = require('lodash')
 const smokesignals = require('smokesignals')
+const Controller = require('@fabrix/fabrix/dist/common').FabrixController
 
 module.exports = _.defaultsDeep({
   pkg: {
@@ -47,6 +48,19 @@ module.exports = _.defaultsDeep({
       render_service: {
         adapter: require('./fixtures/FakeRender'),
         config: {}
+      },
+      fake_generic: {
+        adapter: require('./fixtures/FakeGeneric'),
+        config: {},
+        api: {
+          controllers: {
+            TestController: class TestController extends Controller {
+              foo() {
+                return 'bar'
+              }
+            }
+          }
+        }
       }
     }
   }

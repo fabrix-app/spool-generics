@@ -15,6 +15,17 @@ export class GenericsSpool extends Spool {
       pkg: pkg,
       api: api
     })
+    if (this.app.config.get('generics')) {
+      const generics = this.app.config.get('generics')
+      Object.keys(generics).forEach(generic => {
+        if (generics[generic].hasOwnProperty('api')) {
+          this.api = Object.assign(this.api, generics[generic].api)
+        }
+        if (generics[generic].hasOwnProperty('config')) {
+          this.config = Object.assign(this.config, generics[generic].config)
+        }
+      })
+    }
   }
 
   /**
@@ -38,15 +49,11 @@ export class GenericsSpool extends Spool {
   }
 
   /**
-   * Adds generics' APIs to fabrix api, Adds generics' routes to app.routes
+   * Configure
    */
   async configure () {
-    this.app.api.generics = this.app.api.generics || {}
-
     return Promise.all([
-      Generics.configure(this.app),
-      Generics.loadGenericApis(this.app),
-      Generics.addRoutes(this.app)
+      Generics.configure(this.app)
     ])
   }
 
