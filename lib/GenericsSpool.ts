@@ -3,6 +3,8 @@ import { Generics } from './generics'
 
 import { Validator } from './validator'
 
+import { defaultsDeep } from 'lodash'
+
 import * as config from './config/index'
 import * as pkg from '../package.json'
 import * as api  from './api/index'
@@ -19,7 +21,7 @@ export class GenericsSpool extends Spool {
       const generics = this.app.config.get('generics')
       Object.keys(generics).forEach(generic => {
         if (generics[generic].hasOwnProperty('api')) {
-          this.api = Object.assign(this.api, generics[generic].api)
+          defaultsDeep(this.api, generics[generic].api)
         }
         if (generics[generic].hasOwnProperty('config')) {
           this.config = Object.assign(this.config, generics[generic].config)
