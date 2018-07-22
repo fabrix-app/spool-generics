@@ -7,51 +7,51 @@ const Service = require('@fabrix/fabrix/dist/common').FabrixService
 
 module.exports = _.defaultsDeep({
   pkg: {
-    name: require('../package').name + '-test'
+    name: require('../../package').name + '-test'
   },
   api: {},
   config: {
     main: {
       spools: [
         require('@fabrix/spool-router').RouterSpool,
-        require('../dist').GenericsSpool
+        require('../../dist/index').GenericsSpool
       ]
     },
     generics: {
       payment_processor: {
-        adapter: require('./fixtures/FakePayment'),
+        adapter: require('./FakePayment'),
         config: {}
       },
       email_provider: {
-        adapter: require('./fixtures/FakeEmail'),
+        adapter: require('./FakeEmail'),
         config: {}
       },
       data_store_provider: {
-        adapter: require('./fixtures/FakeDataStore'),
+        adapter: require('./FakeDataStore'),
         config: {}
       },
       tax_provider: {
-        adapter: require('./fixtures/FakeTax'),
+        adapter: require('./FakeTax'),
         config: {}
       },
       shipping_provider: {
-        adapter: require('./fixtures/FakeShipping'),
+        adapter: require('./FakeShipping'),
         config: {}
       },
       fulfillment_provider: {
-        adapter: require('./fixtures/FakeFulfillment'),
+        adapter: require('./FakeFulfillment'),
         config: {}
       },
       geolocation_provider: {
-        adapter: require('./fixtures/FakeGeolocation'),
+        adapter: require('./FakeGeolocation'),
         config: {}
       },
       render_service: {
-        adapter: require('./fixtures/FakeRender'),
+        adapter: require('./FakeRender'),
         config: {}
       },
       fake_generic: {
-        adapter: require('./fixtures/FakeGeneric'),
+        adapter: require('./FakeGeneric'),
         config: {
           foo: 'bar'
         },
