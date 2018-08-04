@@ -1,5 +1,4 @@
 import { Spool } from '@fabrix/fabrix/dist/common'
-import { Generics } from './generics'
 
 import { Validator } from './validator'
 
@@ -47,15 +46,6 @@ export class GenericsSpool extends Spool {
 
     return Promise.all([
       Validator.validateGenericsConfig(this.app.config.get('generics'))
-    ])
-  }
-
-  /**
-   * Configure
-   */
-  async configure () {
-    return Promise.all([
-      Generics.configure(this.app)
     ])
   }
 

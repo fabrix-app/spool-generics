@@ -1,8 +1,7 @@
-
 import * as joi from 'joi'
 
 // TODO schema
-export const taxForOrder =  joi.object().keys({
+export const taxForOrder = joi.object().keys({
   nexus_addresses: joi.array().items(
     joi.object().keys({
       product_ids: joi.array().items(joi.number()),

@@ -58,6 +58,26 @@ describe('TaxGenericService', () => {
       total_shipping: 0
     })
       .then(tax => {
+        assert.deepEqual(tax, {
+          total_taxes: 10,
+          tax_lines: [ { name: 'fake sales tax', price: 10 } ],
+          line_items: [
+            { id: 1,
+              price: 100,
+              calculated_price: 100,
+              tax_code: 'P000000',
+              total_taxes: 5,
+              tax_lines: [{ name: 'fake sales tax', price: 5 }]
+            }, {
+              id: 2,
+              price: 100,
+              calculated_price: 100,
+              tax_code: 'P000000',
+              total_taxes: 5,
+              tax_lines: [{ name: 'fake sales tax', price: 5 }]
+              }
+            ]
+        })
         done()
       })
       .catch(err => {

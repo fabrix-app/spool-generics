@@ -11,7 +11,7 @@ export class GeolocationGenericService extends Service {
    */
   private _init(generic) {
     const Adapter = generic ? generic.adapter : this.app.config.get('generics.geolocation_provider.adapter')
-    return new Adapter(generic ? generic.config : this.app.config.get('generics.geolocation_provider.config'))
+    return new Adapter(this.app, generic ? generic.config : this.app.config.get('generics.geolocation_provider.config'))
   }
 
   /**

@@ -6,14 +6,15 @@ import { FabrixGeneric } from '@fabrix/fabrix/dist/common'
 
 export class Generic extends FabrixGeneric {
   private _app: FabrixApp
+  private _config: {[key: string]: any}
 
-  constructor (app: FabrixApp) {
+  constructor (app: FabrixApp, config) {
     super(app)
-
     if (!(app instanceof EventEmitter)) {
       throw new Error('The "app" argument must be of type EventEmitter')
     }
     this._app = app
+    this._config = config
     this.app.emit(`generic:${this.id}:constructed`, this)
   }
 
@@ -40,10 +41,17 @@ export class Generic extends FabrixGeneric {
   }
 
   /**
-   * Return a reference to the Fabrix configuration map.
+   * Return a reference to the Adapter's config.
    */
-  get config (): FabrixApp['config'] {
-    return this.app.config
+  get config () {
+    return this._config
+  }
+
+  /**
+   * Sets Adapter's config
+   */
+  set config (config) {
+    this._config = config
   }
 
 

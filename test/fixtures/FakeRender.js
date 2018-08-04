@@ -1,9 +1,7 @@
 'use strict'
 // const _ = require('lodash')
-module.exports = class FakeRenderService {
-  constructor(config) {
-    this.config = config
-  }
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakeRenderService extends Generic {
   render(data) {
     return Promise.resolve({document: data})
   }
