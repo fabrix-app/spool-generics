@@ -1,9 +1,7 @@
 'use strict'
 // const _ = require('lodash')
-module.exports = class FakeFulfillmentProvider {
-  constructor(config) {
-    this.config = config
-  }
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakeFulfillmentProvider extends Generic  {
   createOrder(data, adapter){
     return Promise.resolve({})
   }

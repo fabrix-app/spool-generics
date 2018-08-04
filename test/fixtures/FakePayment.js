@@ -1,10 +1,7 @@
 'use strict'
 const shortid = require('shortid')
-const _ = require('lodash')
-module.exports = class FakePaymentProcessor {
-  constructor(config) {
-    this.config = config
-  }
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakePaymentProcessor extends Generic {
   authorize(transaction) {
 
     transaction.kind = 'authorize'

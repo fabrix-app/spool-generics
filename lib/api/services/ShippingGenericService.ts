@@ -11,7 +11,7 @@ export class ShippingGenericService extends Service {
    */
   private _init(generic) {
     const Adapter = generic ? generic.adapter : this.app.config.get('generics.shipping_provider.adapter')
-    return new Adapter(generic ? generic.config : this.app.config.get('generics.shipping_provider.config'))
+    return new Adapter(this.app, generic ? generic.config : this.app.config.get('generics.shipping_provider.config'))
   }
 
   /**

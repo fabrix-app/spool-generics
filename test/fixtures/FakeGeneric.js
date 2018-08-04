@@ -1,7 +1,6 @@
 'use strict'
 // const _ = require('lodash')
-module.exports = class FakeGeneric {
-  constructor(config) {
-    this.config = config
-  }
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakeGeneric extends Generic  {
+
 }

@@ -1,9 +1,7 @@
 'use strict'
 // const _ = require('lodash')
-module.exports = class FakeTaxProvider {
-  constructor(config) {
-    this.config = config
-  }
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakeTaxProvider extends Generic {
   getRate(data) {
     return Promise.resolve({
       amount: 1000,

@@ -1,10 +1,7 @@
 'use strict'
 // const _ = require('lodash')
-module.exports = class FakeGeolocationProvider {
-  constructor(config) {
-    this.config = config
-  }
-
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakeGeolocationProvider extends Generic {
   locate(data) {
     return Promise.resolve({
       latitude: 0.000000,

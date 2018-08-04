@@ -1,10 +1,7 @@
 'use strict'
 const _ = require('lodash')
-module.exports = class FakeDataStoreProvider {
-  constructor(config) {
-    this.config = config
-  }
-
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakeDataStoreProvider extends Generic {
   upload(buffer) {
     const res = {
       status: 'success',

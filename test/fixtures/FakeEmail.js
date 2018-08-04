@@ -1,9 +1,7 @@
 'use strict'
 // const _ = require('lodash')
-module.exports = class FakeEmailProvider {
-  constructor(config) {
-    this.config = config
-  }
+const Generic = require('../../dist/Generic').Generic
+module.exports = class FakeEmailProvider extends Generic {
   send(data) {
     return Promise.resolve([])
   }

@@ -2,7 +2,7 @@
 import * as joi from 'joi'
 
 // TODO schema
-export const taxForOrderSuccess =  joi.object().keys({
+export const taxForOrderSuccess = joi.object().keys({
   total_taxes: joi.number(),
   tax_lines: joi.array().items(
     joi.object().keys({

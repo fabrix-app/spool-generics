@@ -6,38 +6,38 @@
 export const generics = {
   email_provider: {
     adapter: null,
-    options: {}
+    config: {}
   },
   payment_processor: {
     adapter: null,
-    options: {}
+    config: {}
   },
   tax_provider: {
     adapter: null,
-    options: {}
+    config: {}
   },
   shipping_provider: {
     adapter: null,
-    options: {}
+    config: {}
   },
   fulfillment_provider: {
     adapter: null,
-    options: {}
+    config: {}
   },
   data_store_provider: {
     adapter: null,
-    options: {}
+    config: {}
   },
   geolocation_provider: {
     adapter: null,
-    options: {}
+    config: {}
   },
   image_provider: {
     adapter: null,
-    options: {}
+    config: {}
   },
   render_service: {
     adapter: null,
-    options: {}
+    config: {}
   }
 }
