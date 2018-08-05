@@ -23,7 +23,7 @@ export class GenericsSpool extends Spool {
           defaultsDeep(this.api, generics[generic].api)
         }
         if (generics[generic].hasOwnProperty('config')) {
-          this.config = Object.assign(this.config, generics[generic].config)
+          this.app.config.set(generic, generics[generic].config)
         }
       })
     }
