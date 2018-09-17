@@ -3,7 +3,7 @@
 --full-trace
 --no-exit
 --check-leaks
---timeout 5000
+--timeout 10000
 --globals app,__core-js_shared__,__coverage__
 
 test/index.js test/**/*.test.js
